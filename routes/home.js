@@ -1,19 +1,13 @@
-const express = require('express');
-const cors = require('cors');
+const express = require("express");
+const router = express.Router();
 
-
-require('dotenv').config();
-
-const app = express();
-
-
-
-app.use(cors());
-app.use(express.json());
-app.get('/', (req, res) => {
+router.get('/', (req, res) => {
     const slack_name = req.query.slack_name;
     const track = req.query.track;
 
+    if (!slack_name || !track) {
+        return res.status(400).json({ error: "Missing query parameters slack_name and track" });
+    }
     // Get the current date and time
     const currentDay = new Date().toLocaleString('en-US', { weekday: 'long' });
     const utcTime = new Date().toISOString();
@@ -29,13 +23,8 @@ app.get('/', (req, res) => {
         status_code: 200,
     };
 
-    res.json(jsonResponse);
+   return res.json(jsonResponse);
 });
 
-// Start the Express server
-const port = process.env.PORT || 3004;
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-});
 
-module.exports = app;
+module.exports = router;
