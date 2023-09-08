@@ -20,8 +20,10 @@ router.get('/', (req, res) => {
         github_repo_url: 'https://github.com/lamsya',
         status_code: 200,
     };
-
-   return res.json(jsonResponse);
+    res.header('Content-Type', 'text/plain');
+    
+    // Send the response
+    res.json(jsonResponse);
 });
 
 
