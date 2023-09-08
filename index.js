@@ -1,4 +1,6 @@
 const express = require('express');
+require('dotenv').config();
+
 const app = express();
 
 
@@ -16,7 +18,7 @@ app.get('/api', (req, res) => {
         current_day: currentDay,
         utc_time: utcTime,
         track,
-        github_file_url: 'https://github.com/lamsya/',
+        github_file_url: 'https://github.com/LamsyA/Hngx',
         github_repo_url: 'https://github.com/lamsya',
         status_code: 200,
     };
