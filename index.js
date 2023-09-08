@@ -4,7 +4,7 @@ require('dotenv').config();
 const app = express();
 
 
-app.get('/api', (req, res) => {
+app.get('/', (req, res) => {
     const slack_name = req.query.slack_name;
     const track = req.query.track;
 
@@ -31,3 +31,5 @@ const port = process.env.PORT || 3004;
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
+
+module.exports = app;
