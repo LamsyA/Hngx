@@ -14,9 +14,7 @@ app.get('/', (req, res) => {
     const slack_name = req.query.slack_name;
     const track = req.query.track;
 
-    if (!slack_name || !track) {
-        return res.status(400).json({ error: "Missing query parameters slack_name and track" });
-    }
+    
     // Get the current date and time
     const currentDay = new Date().toLocaleString('en-US', { weekday: 'long' });
     const utcTime = new Date().toISOString();
