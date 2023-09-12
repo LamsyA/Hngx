@@ -43,6 +43,10 @@ mongoose.connection.on('disconnected', () => {
     console.log("Disconnected from mongoDB!");
 })
 
+app.get('/', (req, res) => {
+    res.send('<h1>This is a backend server</h1>');
+  });
+  
 // Start the Express server
 const port = process.env.PORT || 3004;
 app.listen(port, () => {
