@@ -205,6 +205,13 @@ npm start or npm run dev
 
 The API will be accessible at `http://localhost:3000`.
 
+
+## testing
+
+to run the API local testing 
+```
+npm test
+```
 ### Deployment
 
 deploy it on any deployment platform of your choice
@@ -214,11 +221,14 @@ deploy it on any deployment platform of your choice
 
 
 
+---
 
 
 - UML:
 
  ![Alt Text](./public/task2.drawio%20(2).png)
+
+
 
 
 1. **User Model Class**:
