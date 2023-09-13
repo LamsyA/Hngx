@@ -1,3 +1,24 @@
+<!-- TOC -->
+- [API Documentation](#api-documentation)
+  - [Base URL](#base-url)
+  - [Endpoints](#endpoints)
+    - [1. Create a New User](#1-create-a-new-user)
+    - [2. Get User by Name](#2-get-user-by-name)
+    - [3. Update User by Name](#3-update-user-by-name)
+    - [4. Delete User by Name](#4-delete-user-by-name)
+  - [Sample Usage](#sample-usage)
+    - [Creating a New User](#creating-a-new-user)
+    - [Getting a User by Name](#getting-a-user-by-name)
+  - [Setup and Deployment](#setup-and-deployment)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+    - [Configuration](#configuration)
+    - [Running Locally](#running-locally)
+  - [testing](#testing)
+    - [Deployment](#deployment)
+  - [UML:](#uml)
+      - [1. **User Model Class**:](#1-user-model-class)
+<!-- /TOC -->
 
 
 
@@ -224,14 +245,14 @@ deploy it on any deployment platform of your choice
 ---
 
 
-- UML:
+  ## UML:
 
- ![Alt Text](./public/task2.drawio%20(2).png)
-
-
+  ![Alt Text](./public/task2.drawio%20(2).png)
 
 
-1. **User Model Class**:
+
+
+#### 1. **User Model Class**:
    - Class Name: `User`
    - Attributes:
      - `name`: String
