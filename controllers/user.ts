@@ -3,7 +3,7 @@ import User from '../models/users'
 import validator from 'validator';
 export const createUser = async(req: Request, res: Response) => {
     try{
-        const {name, email, age} = req.body
+        const {name, email} = req.body
         if(!validator.isEmail(req.body.email)) {
             return res.status(400).json({status:"failed", error: "invaild email format"})
         }
@@ -11,12 +11,9 @@ export const createUser = async(req: Request, res: Response) => {
     if (typeof name !== 'string') {
         return res.status(400).json({status:"failed", error: 'Name must be a string.' });
       }
-      // Validate the age field (must be a positive integer)
-    if (!validator.isInt(age.toString(), { min: 1 })) {
-        return res.status(400).json({ status:"failed", error: 'Age must be a positive integer.' });
-      }
+  
         
-      const user = new User({ name, age, email });
+      const user = new User({ name,email });
       await user.save();
       
       res.status(201).json({ status: "success", user });
@@ -74,7 +71,7 @@ export const getUserByName = async (req: Request, res: Response) => {
 // Update a user by a dynamic name parameter
 export const updateUser = async (req: Request, res: Response) => {
   try {
-    const { name, email, age } = req.body;
+    const { name, email } = req.body;
     const dynamicName = req.params.name;
 
     // Validate the email field
@@ -87,15 +84,12 @@ export const updateUser = async (req: Request, res: Response) => {
       return res.status(400).json({ status: "failed", error: 'Name must be a string.' });
     }
 
-    // Validate the age field (must be a positive integer)
-    if (!validator.isInt(age.toString(), { min: 1 })) {
-      return res.status(400).json({ status: "failed", error: 'Age must be a positive integer.' });
-    }
+   
 
     // Find the user by the dynamic name and update the fields
     const updatedUser = await User.findOneAndUpdate(
       { name: dynamicName },
-      { name, age, email },
+      { name, email },
       { new: true } // Return the updated user
     );
 

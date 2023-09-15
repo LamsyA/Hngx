@@ -17,11 +17,7 @@ const UserSchema:Schema<IUser> = new mongoose.Schema({
         required: false,
         unique: true,
     },
-    age: {
-        type: Number,
-        required: true,
-        unique: true,
-    }
+   
 
 })
 

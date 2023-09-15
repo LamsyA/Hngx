@@ -45,8 +45,7 @@ The base URL for accessing this API is: `https://hngx-eight.vercel.app`
 ```json
 {
   "name": "John Doe",
-  "email": "john@example.com",
-  "age": 30
+  "email": "john@example.com"
 }
 ```
 
@@ -58,9 +57,7 @@ The base URL for accessing this API is: `https://hngx-eight.vercel.app`
   "user": {
     "_id": "12345",
     "name": "John Doe",
-    "email": "john@example.com",
-    "age": 30
-  }
+    "email": "john@example.com"
 }
 ```
 
@@ -78,8 +75,7 @@ The base URL for accessing this API is: `https://hngx-eight.vercel.app`
   "user": {
     "_id": "12345",
     "name": "John Doe",
-    "email": "john@example.com",
-    "age": 30
+    "email": "john@example.com"
   }
 }
 ```
@@ -95,8 +91,7 @@ The base URL for accessing this API is: `https://hngx-eight.vercel.app`
 ```json
 {
   "name": "Updated Name",
-  "email": "updated@example.com",
-  "age": 35
+  "email": "updated@example.com"
 }
 ```
 
@@ -108,8 +103,7 @@ The base URL for accessing this API is: `https://hngx-eight.vercel.app`
   "user": {
     "_id": "12345",
     "name": "Updated Name",
-    "email": "updated@example.com",
-    "age": 35
+    "email": "updated@example.com"
   }
 }
 ```
@@ -142,8 +136,7 @@ Content-Type: application/json
 
 {
   "name": "John Doe",
-  "email": "john@example.com",
-  "age": 30
+  "email": "john@example.com"
 }
 ```
 
@@ -158,8 +151,7 @@ Content-Type: application/json
   "user": {
     "_id": "12345",
     "name": "John Doe",
-    "email": "john@example.com",
-    "age": 30
+    "email": "john@example.com"
   }
 }
 ```
@@ -184,8 +176,7 @@ Content-Type: application/json
   "user": {
     "_id": "12345",
     "name": "John Doe",
-    "email": "john@example.com",
-    "age": 30
+    "email": "john@example.com"
   }
 }
 ```
@@ -257,12 +248,11 @@ deploy it on any deployment platform of your choice
    - Attributes:
      - `name`: String
      - `email`: String (optional)
-     - `age`: Number
    - Methods:
      - Constructor to initialize attributes
      - Getter and setter methods for attributes
 
-2. **Controllers**:
+1. **Controllers**:
    - `UserController`
      - Methods:
        - `createUser(req: Request, res: Response)`: Responsible for creating a new user.
@@ -270,7 +260,7 @@ deploy it on any deployment platform of your choice
        - `getUserByName(req: Request, res: Response)`: Responsible for getting a user by name.
        - `deleteUser(req: Request, res: Response)`: Responsible for deleting a user by name.
 
-3. **Routes**:
+2. **Routes**:
    - `UserRoutes`
      - Methods:
        - `POST /api/`: Maps to `UserController.createUser`
@@ -278,7 +268,7 @@ deploy it on any deployment platform of your choice
        - `GET /api/:name`: Maps to `UserController.getUserByName`
        - `DELETE /api/:name`: Maps to `UserController.deleteUser`
 
-4. **Express App**:
+3. **Express App**:
    - `app`
      - Middleware:
        - `helmet()`: Adds security headers.
@@ -293,7 +283,7 @@ deploy it on any deployment platform of your choice
      - MongoDB Connection:
        - Connected to MongoDB using Mongoose.
 
-5. **External Dependencies**:
+4. **External Dependencies**:
    - MongoDB: Used to store user data.
    - dotenv: Used for environment variable configuration.
 
